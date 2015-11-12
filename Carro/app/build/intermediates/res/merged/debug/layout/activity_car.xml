@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.circuitos.k9.carro.Car"
+    android:background="@android:color/holo_red_light"
+    android:id="@+id/koekde"
+    android:visibility="visible"
+    android:clickable="true"
+    android:onClick="btn_up">
+
+    <TextView android:text="Direccionales.." android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/krjfieo"
+        android:textSize="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView2"
+        android:src="@drawable/circlearrow"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/imageView3"
+        android:layout_toStartOf="@+id/imageView3"
+        android:clickable="true"
+        android:nestedScrollingEnabled="false"
+        android:onClick="btn_up" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView3"
+        android:src="@drawable/circlearrow2"
+        android:clickable="true"
+        android:layout_below="@+id/imageView2"
+        android:layout_toRightOf="@+id/imageView5"
+        android:layout_toEndOf="@+id/imageView5"
+        android:onClick="btn_right" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView4"
+        android:src="@drawable/circlearrow3"
+        android:layout_above="@+id/imageView5"
+        android:layout_toLeftOf="@+id/imageView5"
+        android:layout_toStartOf="@+id/imageView5"
+        android:clickable="true"
+        android:onClick="btn_left" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView5"
+        android:src="@drawable/circlearrow4"
+        android:layout_below="@+id/imageView3"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:onClick="btn_down" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView6"
+        android:src="@drawable/pause"
+        android:layout_below="@+id/imageView5"
+        android:layout_toLeftOf="@+id/imageView5"
+        android:layout_toStartOf="@+id/imageView5"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:onClick="btn_pause" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView7"
+        android:src="@drawable/play"
+        android:layout_alignTop="@+id/imageView6"
+        android:layout_toRightOf="@+id/imageView5"
+        android:layout_toEndOf="@+id/imageView5"
+        android:clickable="true"
+        android:onClick="btn_go" />
+
+</RelativeLayout><!-- From: file:/home/k9/carro/Carro/app/src/main/res/layout/activity_car.xml -->
