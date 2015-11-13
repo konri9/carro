@@ -37,6 +37,13 @@ public class Car extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void btn_warning(View view) {
+        Toast.makeText(this, "Direccionales encendidas!", Toast.LENGTH_SHORT).show();
+    }
+
+    public void btn_bluetooth(View view) {
+        Toast.makeText(this, "Has seleccionado el bluetooth!", Toast.LENGTH_SHORT).show();
+    }
 
     public void btn_up (View view) {
         Toast.makeText(this, "Mover el carro hacia arriba!", Toast.LENGTH_SHORT).show();
@@ -66,9 +73,5 @@ public class Car extends AppCompatActivity {
     public void btn_go(View view) {
         Toast.makeText(this, "Avanzar el carro!", Toast.LENGTH_SHORT).show();
     }
-
-
-
-
 
 }

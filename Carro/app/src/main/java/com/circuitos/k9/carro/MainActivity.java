@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void btn_drive(View view)
+    public void btn_driver(View view)
     {
         Intent intent = new Intent(this, Car.class);
         startActivity(intent);
