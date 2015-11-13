@@ -11,6 +11,12 @@
     android:clickable="true"
     android:onClick="btn_up">
 
+    <ListView
+        android:id="@+id/paired_devices_listview"
+        android:layout_width="fill_parent"
+        android:visibility="invisible"
+        android:layout_height="fill_parent" />
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -21,7 +27,8 @@
         android:onClick="btn_up"
         android:layout_below="@+id/imageView8"
         android:layout_toLeftOf="@+id/imageView3"
-        android:layout_toStartOf="@+id/imageView3" />
+        android:layout_toStartOf="@+id/imageView3"
+        android:layout_marginTop="30dp" />
 
     <ImageView
         android:layout_width="100dp"
@@ -75,7 +82,8 @@
         android:onClick="btn_go"
         android:layout_below="@+id/imageView5"
         android:layout_toRightOf="@+id/imageView5"
-        android:layout_toEndOf="@+id/imageView5" />
+        android:layout_toEndOf="@+id/imageView5"
+        android:layout_marginTop="20dp" />
 
     <ImageView
         android:layout_width="100dp"

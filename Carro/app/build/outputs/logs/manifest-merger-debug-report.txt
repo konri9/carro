@@ -1,65 +1,73 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:2:1-29:12
+ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:2:1-33:12
 	package
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:3:5-37
-		INJECTED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml
-		INJECTED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:3:5-37
+		INJECTED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml
+		INJECTED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml
-		INJECTED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml
+		INJECTED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml
+		INJECTED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml
-		INJECTED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml
+		INJECTED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml
+		INJECTED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.BLUETOOTH
+ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:5:5-68
+	android:name
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:5:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:6:5-74
+	android:name
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:6:22-71
 application
-ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:5:5-27:19
-MERGED from [com.android.support:appcompat-v7:23.0.0] /home/k9/bullshit/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.0.0] /home/k9/bullshit/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
+ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:8:5-31:19
+MERGED from [com.android.support:appcompat-v7:23.0.0] /home/k9/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.0] /home/k9/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:8:9-41
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:11:9-41
 	android:allowBackup
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:9:9-35
 	android:icon
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:7:9-43
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:10:9-43
 	android:theme
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:9:9-40
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:12:9-40
 activity#com.circuitos.k9.carro.MainActivity
-ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:10:9-18:20
+ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:14:9-22:20
 	android:label
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:12:13-45
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:16:13-45
 	android:name
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:11:13-41
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:15:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:13:13-17:29
+ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:17:13-21:29
 action#android.intent.action.MAIN
-ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:14:17-69
+ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:14:25-66
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:16:17-77
+ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:16:27-74
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:20:27-74
 activity#com.circuitos.k9.carro.Car
-ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:19:9-22:20
+ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:23:9-26:20
 	android:label
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:21:13-55
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:25:13-55
 	android:name
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:20:13-32
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:24:13-32
 activity#com.circuitos.k9.carro.Credits
-ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:23:9-26:20
+ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:27:9-30:20
 	android:label
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:25:13-59
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:29:13-59
 	android:name
-		ADDED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml:24:13-36
+		ADDED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml:28:13-36
 uses-sdk
-INJECTED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:23.0.0] /home/k9/bullshit/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.0.0] /home/k9/bullshit/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
+INJECTED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:23.0.0] /home/k9/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.0.0] /home/k9/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
-		INJECTED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml
-		INJECTED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml
+		INJECTED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml
+		INJECTED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml
-		INJECTED from /home/k9/bullshit/carro/Carro/app/src/main/AndroidManifest.xml
+		INJECTED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml
+		INJECTED from /home/k9/carro/Carro/app/src/main/AndroidManifest.xml
