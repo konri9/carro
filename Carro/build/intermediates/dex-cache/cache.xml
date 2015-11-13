@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/home/k9/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
-        <dex dex="/home/k9/carro/Carro/app/build/intermediates/pre-dexed/debug/classes-52d711b621f22c66593a12f83fdbc04e55215f41.jar" />
-    </item>
-    <item
-        jar="/home/k9/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="/home/k9/carro/Carro/app/build/intermediates/pre-dexed/debug/classes-6309ba1c70d6f5fcccee347d5fca2fa808d3b126.jar" />
-    </item>
-    <item
-        jar="/home/k9/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="/home/k9/carro/Carro/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-e26c0857e8a4c104dd1d9e335352ec810cb05104.jar" />
-    </item>
-    <item
         jar="/home/k9/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
         jumboMode="false"
         revision="23.0.0"
         sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="/home/k9/carro/Carro/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.0-b2d7a914357fa745f41ffa7155e1d7de1ad73aed.jar" />
+        <dex dex="/home/k9/bullshit/carro/Carro/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.0-b2d7a914357fa745f41ffa7155e1d7de1ad73aed.jar" />
+    </item>
+    <item
+        jar="/home/k9/bullshit/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="/home/k9/bullshit/carro/Carro/app/build/intermediates/pre-dexed/debug/classes-925ef2ad568f549c758b196e8c6c9b54608c1d77.jar" />
+    </item>
+    <item
+        jar="/home/k9/bullshit/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="/home/k9/bullshit/carro/Carro/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-3837d1a0224222eff18d8fc8d20b0f06635ff22f.jar" />
+    </item>
+    <item
+        jar="/home/k9/bullshit/carro/Carro/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="/home/k9/bullshit/carro/Carro/app/build/intermediates/pre-dexed/debug/classes-2f7968839d89dc6b80409b5e62814b11cf8ba5e8.jar" />
     </item>
 
 </items>
