@@ -53,4 +53,4 @@
         android:onClick="btn_credits"
         android:clickable="true" />
 
-</RelativeLayout><!-- From: file:/home/k9/bullshit/carro/Carro/app/src/main/res/layout/activity_main.xml -->
+</RelativeLayout><!-- From: file:/home/k9/carro/Carro/app/src/main/res/layout/activity_main.xml -->

@@ -1564,19 +1564,21 @@ containing a value of this type.
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f02003c;
         public static final int abc_textfield_search_material=0x7f02003d;
         public static final int black_bluetooth=0x7f02003e;
-        public static final int bluetooth_wave=0x7f02003f;
-        public static final int carro=0x7f020040;
-        public static final int circlearrow=0x7f020041;
-        public static final int circlearrow2=0x7f020042;
-        public static final int circlearrow3=0x7f020043;
-        public static final int circlearrow4=0x7f020044;
-        public static final int honda=0x7f020045;
-        public static final int icon_bluetooth=0x7f020046;
-        public static final int notification_template_icon_bg=0x7f02004b;
-        public static final int pause=0x7f020047;
-        public static final int play=0x7f020048;
-        public static final int warning1=0x7f020049;
-        public static final int warning2=0x7f02004a;
+        public static final int bluetooth=0x7f02003f;
+        public static final int bluetooth_wave=0x7f020040;
+        public static final int carro=0x7f020041;
+        public static final int circlearrow=0x7f020042;
+        public static final int circlearrow2=0x7f020043;
+        public static final int circlearrow3=0x7f020044;
+        public static final int circlearrow4=0x7f020045;
+        public static final int honda=0x7f020046;
+        public static final int icon_bluetooth=0x7f020047;
+        public static final int notification_template_icon_bg=0x7f02004d;
+        public static final int pause=0x7f020048;
+        public static final int play=0x7f020049;
+        public static final int warning=0x7f02004a;
+        public static final int warning1=0x7f02004b;
+        public static final int warning2=0x7f02004c;
     }
     public static final class id {
         public static final int abcd=0x7f0c005e;

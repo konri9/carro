@@ -114,4 +114,4 @@
         android:onClick="btn_warning"
         android:contentDescription="warning" />
 
-</RelativeLayout><!-- From: file:/home/k9/bullshit/carro/Carro/app/src/main/res/layout/activity_car.xml -->
+</RelativeLayout><!-- From: file:/home/k9/carro/Carro/app/src/main/res/layout/activity_car.xml -->
