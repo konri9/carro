@@ -1,21 +1,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- App required & useful strings -->
+
     <string name="app_name">Carro</string>
 
-
-
-
-
-
-
-
-
-    <!-- Bluetooth_helper chat required strings-->
-
-    <!--  BluetoothChat -->
+    <!--  Bluetooth -->
     <string name="send">Send</string>
-    <string name="not_connected">You are not connected to a device</string>
-    <string name="bt_not_enabled_leaving">Bluetooth was not enabled. Leaving Bluetooth Chat.</string>
+    <string name="not_connected">No estas conectado a un dispositivo</string>
+    <string name="bt_not_enabled">Bluetooth was not enabled.</string>
     <string name="title_connecting">connecting...</string>
     <string name="title_connected_to">connected to <xliff:g id="device_name">%1$s</xliff:g></string>
     <string name="title_not_connected">not connected</string>

@@ -10,100 +10,102 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/imageView2"
+        android:id="@+id/arrow_up"
         android:src="@drawable/circlearrow"
         android:clickable="true"
         android:nestedScrollingEnabled="false"
-        android:onClick="btn_up"
+        android:layout_weight="1"
+        android:onClick="btnSignal"
         android:layout_marginTop="36dp"
-        android:layout_below="@+id/imageView10"
-        android:layout_toLeftOf="@+id/imageView3"
-        android:layout_toStartOf="@+id/imageView3" />
+        android:layout_below="@+id/warning"
+        android:layout_toLeftOf="@+id/arrow_right"
+        android:layout_toStartOf="@+id/arrow_right" />
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/imageView3"
+        android:id="@+id/arrow_right"
         android:src="@drawable/circlearrow2"
         android:clickable="true"
-        android:layout_below="@+id/imageView2"
-        android:layout_toRightOf="@+id/imageView5"
-        android:layout_toEndOf="@+id/imageView5"
-        android:onClick="btn_right" />
+        android:layout_below="@+id/arrow_up"
+        android:layout_toRightOf="@+id/arrow_down"
+        android:layout_toEndOf="@+id/arrow_down"
+        android:onClick="btnSignal" />
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/imageView4"
+        android:id="@+id/arrow_left"
         android:src="@drawable/circlearrow3"
-        android:layout_above="@+id/imageView5"
-        android:layout_toLeftOf="@+id/imageView5"
-        android:layout_toStartOf="@+id/imageView5"
-        android:clickable="true" />
+        android:layout_above="@+id/arrow_down"
+        android:layout_toLeftOf="@+id/arrow_down"
+        android:layout_toStartOf="@+id/arrow_down"
+        android:clickable="true"
+        android:onClick="btnSignal" />
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/imageView5"
+        android:id="@+id/arrow_down"
         android:src="@drawable/circlearrow4"
-        android:layout_below="@+id/imageView3"
+        android:layout_below="@+id/arrow_right"
         android:layout_centerHorizontal="true"
         android:clickable="true"
-        android:onClick="btn_down" />
+        android:onClick="btnSignal" />
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/imageView6"
+        android:id="@+id/pause"
         android:src="@drawable/pause"
         android:clickable="true"
-        android:onClick="btn_pause"
-        android:layout_below="@+id/imageView5"
-        android:layout_alignLeft="@+id/imageView4"
-        android:layout_alignStart="@+id/imageView4" />
+        android:onClick="btnSignal"
+        android:layout_below="@+id/arrow_down"
+        android:layout_alignLeft="@+id/arrow_left"
+        android:layout_alignStart="@+id/arrow_left" />
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/imageView7"
+        android:id="@+id/play"
         android:src="@drawable/play"
         android:clickable="true"
-        android:onClick="btn_go"
-        android:layout_below="@+id/imageView5"
-        android:layout_toRightOf="@+id/imageView5"
-        android:layout_toEndOf="@+id/imageView5" />
+        android:onClick="btnSignal"
+        android:layout_below="@+id/arrow_down"
+        android:layout_toRightOf="@+id/arrow_down"
+        android:layout_toEndOf="@+id/arrow_down" />
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/imageView8"
+        android:id="@+id/bluetooth_"
         android:src="@drawable/icon_bluetooth"
-        android:onClick="btn_bluetooth"
+        android:onClick="start_bt"
         android:clickable="true"
-        android:layout_below="@+id/imageView10"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/warning"
+        android:layout_alignLeft="@+id/right_light"
+        android:layout_alignStart="@+id/right_light" />
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/imageView9"
+        android:id="@+id/freno"
         android:src="@drawable/abc_btn_radio_to_on_mtrl_015"
-        android:layout_below="@+id/imageView2"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_alignStart="@+id/imageView2"
+        android:layout_below="@+id/arrow_up"
+        android:layout_alignLeft="@+id/arrow_up"
+        android:layout_alignStart="@+id/arrow_up"
         android:contextClickable="true"
-        android:onClick="btn_stop_lights"
+        android:onClick="btnSignal"
         android:baselineAlignBottom="false" />
 
     <ImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:id="@+id/imageView10"
-        android:src="@drawable/warning2"
+        android:id="@+id/warning"
+        android:src="@drawable/warning"
         android:clickable="true"
         android:focusableInTouchMode="false"
-        android:onClick="btn_warning"
+        android:onClick="btnSignal"
         android:contentDescription="warning"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -111,36 +113,25 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/switch1"
+        android:id="@+id/right_light"
         android:checked="false"
-        android:layout_alignTop="@+id/imageView10"
-        android:layout_alignRight="@+id/imageView3"
-        android:layout_alignEnd="@+id/imageView3"
-        android:layout_marginTop="28dp" />
+        android:layout_alignTop="@+id/warning"
+        android:layout_alignRight="@+id/arrow_right"
+        android:layout_alignEnd="@+id/arrow_right"
+        android:layout_marginTop="28dp"
+        android:onClick="btnSignal" />
 
 
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/switch2"
+        android:id="@+id/left_light"
         android:checked="false"
-        android:layout_alignTop="@+id/switch1"
-        android:layout_alignLeft="@+id/imageView4"
-        android:layout_alignStart="@+id/imageView4" />
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/imageView11"
-        android:src="@drawable/black_tooth"
-        android:onClick="btn_bluetooth"
-        android:clickable="true"
-        android:layout_alignTop="@+id/imageView8"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/imageView8"
-        android:layout_alignLeft="@+id/switch1"
-        android:layout_alignStart="@+id/switch1" />
+        android:layout_alignTop="@+id/right_light"
+        android:layout_alignLeft="@+id/arrow_left"
+        android:layout_alignStart="@+id/arrow_left"
+        android:nestedScrollingEnabled="false"
+        android:onClick="btnSignal" />
 
 
 </RelativeLayout>
