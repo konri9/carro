@@ -21,7 +21,9 @@
         android:src="@drawable/honda"
         android:layout_below="@+id/abcded"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:onClick="btn_clax" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -51,9 +53,5 @@
         android:clickable="true" />
 
 
-
-
-
-
 </RelativeLayout>
-<!-- From: file:/home/k9/carro/Carro/app/src/main/res/layout/activity_main.xml -->
+<!-- From: file:/home/k9/Documents/Android-Apps/Carro/app/src/main/res/layout/activity_main.xml -->

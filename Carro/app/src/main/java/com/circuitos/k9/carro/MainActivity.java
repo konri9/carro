@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void btn_credits(View view)
     {
-        Intent intent = new Intent(this,Creditos.class);
+        Intent intent = new Intent(this,Credits.class);
         startActivity(intent);
     }
 

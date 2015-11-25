@@ -5,7 +5,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.circuitos.k9.carro.com.circuitos.k9.carro.app.Carro">
+    tools:context="com.circuitos.k9.carro.Carro">
 
     <ImageView
         android:layout_width="100dp"
@@ -80,7 +80,7 @@
         android:layout_height="100dp"
         android:id="@+id/bluetooth_"
         android:src="@drawable/icon_bluetooth"
-        android:onClick="btn_bluetooth"
+        android:onClick="start_bt"
         android:clickable="true"
         android:layout_below="@+id/warning"
         android:layout_alignLeft="@+id/right_light"
@@ -89,13 +89,13 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/imageView9"
+        android:id="@+id/freno"
         android:src="@drawable/abc_btn_radio_to_on_mtrl_015"
         android:layout_below="@+id/arrow_up"
         android:layout_alignLeft="@+id/arrow_up"
         android:layout_alignStart="@+id/arrow_up"
         android:contextClickable="true"
-        android:onClick="btn_stop_lights"
+        android:onClick="btnSignal"
         android:baselineAlignBottom="false" />
 
     <ImageView
@@ -134,5 +134,17 @@
         android:onClick="btnSignal" />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 </RelativeLayout>
-<!-- From: file:/home/k9/carro/Carro/app/src/main/res/layout/activity_carro.xml -->
+<!-- From: file:/home/k9/Documents/Android-Apps/Carro/app/src/main/res/layout/activity_carro.xml -->
