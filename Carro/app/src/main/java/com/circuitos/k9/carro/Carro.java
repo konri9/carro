@@ -56,44 +56,63 @@ public class Carro extends AppCompatActivity{
 
         /**
          * Send arduino messages to move the car
+         *
+         * SIMBOLOGY:
+         * Arrow__up    ----> 97 -----> 'a'
+         * Arrow_right  ----> 98 -----> 'b'
+         * Arrow_left   ----> 98 -----> 'c'
+         * Arrow_down   ----> 99 -----> 'd'
+         * Play         ----> 100 ----> 'e'
+         * Pause        ----> 101 ----> 'f'
+         * Warning      ----> 102 ----> 'g'
+         * Right_light  ----> 103 ----> 'h'
+         * Left_light   ----> 104 ----> 'i'
+         * Freno        ----> 105 ----> 'j'
          */
 
         public void btnSignal(View view) {
             switch (view.getId()) {
                 case R.id.arrow_up:
                     syslog = (connection_is_ready) ? "Mover el carro hacia arriba" : getString(R.string.not_connected);
-                    toast_log(syslog);
-                    send_signal(get_id(view));
+                    //toast_log(syslog);
+                    toast_log(Integer.toString('a'));
+                    if (connection_is_ready) send_signal('a');
                     break;
                 case R.id.arrow_right:
                     syslog = (connection_is_ready) ? "Mover el carro hacia la derecha" : getString(R.string.not_connected);
-                    toast_log(syslog);
-                    send_signal(get_id(view));
+                   // toast_log(syslog);
+                    toast_log(Integer.toString('b'));
+                    if (connection_is_ready) send_signal('b');
                     break;
                 case R.id.arrow_left:
                     syslog = (connection_is_ready) ? "Mover el carro hacia la izquierda" : getString(R.string.not_connected);
-                    toast_log(syslog);
-                    send_signal(get_id(view));
+                    //toast_log(syslog);
+                    toast_log(Integer.toString('c'));
+                    if (connection_is_ready) send_signal('c');
                     break;
                 case R.id.arrow_down:
                     syslog = (connection_is_ready) ? "Mover el carro hacia abajo" : getString(R.string.not_connected);
-                    toast_log(syslog);
-                    send_signal(get_id(view));
+                    //toast_log(syslog);
+                    toast_log(Integer.toString('d'));
+                    if (connection_is_ready) send_signal('d');
                     break;
                 case R.id.play:
                     syslog = (connection_is_ready) ? "Avanzar el carro" : getString(R.string.not_connected);
-                    toast_log(syslog);
-                    send_signal(get_id(view));
+                   // toast_log(syslog);
+                    toast_log(Integer.toString('e'));
+                    if (connection_is_ready) send_signal('e');
                     break;
                 case R.id.pause:
                     syslog = (connection_is_ready) ? "Detener el carro" : getString(R.string.not_connected);
-                    toast_log(syslog);
-                    send_signal(get_id(view));
+                    //toast_log(syslog);
+                    toast_log(Integer.toString('f'));
+                    if (connection_is_ready) send_signal('f');
                     break;
                 case R.id.warning:
                     syslog = (connection_is_ready) ? "Direccionales encendidas" : getString(R.string.not_connected);
-                    toast_log(syslog);
-                    send_signal(get_id(view));
+                  //  toast_log(syslog);
+                    toast_log(Integer.toString('g'));
+                    if (connection_is_ready) send_signal('g');
                     break;
                 case R.id.right_light:
                     if(right_light_on) {
@@ -102,8 +121,9 @@ public class Carro extends AppCompatActivity{
                             syslog = "Recuerda apagar la direccional izquierda antes";
                         } else {
                             syslog = (!connection_is_ready) ? "Direccional derecha encendida" : getString(R.string.not_connected);
-                            toast_log(syslog);
-                            send_signal(get_id(view));
+                            //toast_log(syslog);
+                            toast_log(Integer.toString('h'));
+                            if (connection_is_ready) send_signal('h');
                             break;
                         }
                     }
@@ -117,8 +137,9 @@ public class Carro extends AppCompatActivity{
                             syslog = "Recuerda apagar la direccional izquierda antes";
                         } else {
                             syslog = (!connection_is_ready) ? "Direccional izquierda encendida" : getString(R.string.not_connected);
-                            toast_log(syslog);
-                            send_signal(get_id(view));
+                           // toast_log(syslog);
+                            toast_log(Integer.toString('i'));
+                            if (connection_is_ready) send_signal('i');
                             break;
                         }
                     }
@@ -133,7 +154,7 @@ public class Carro extends AppCompatActivity{
                 case R.id.freno:
                     syslog = (connection_is_ready) ? "Carro frenado" : getString(R.string.not_connected);
                     toast_log(syslog);
-                    send_signal(get_id(view));
+                    send_signal('j');
                     break;
                 default:
                     Toast.makeText(getApplicationContext(), "Ha ocurrido un error", Toast.LENGTH_LONG).show();
