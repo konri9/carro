@@ -51,6 +51,9 @@ public class Carro extends AppCompatActivity{
             //Listener to check for changes in state
             sw1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {@Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {right_light_on = (isChecked) ? true : false;}});
             sw2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {@Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {left_light_on = (isChecked) ? true : false;}});
+
+            bt = new Bluetooth(this, mHandler);
+            connectService();
         }
 
 
@@ -156,22 +159,12 @@ public class Carro extends AppCompatActivity{
                     toast_log(syslog);
                     send_signal('j');
                     break;
-                default:
+                 default:
                     Toast.makeText(getApplicationContext(), "Ha ocurrido un error", Toast.LENGTH_LONG).show();
                     break;
             }
         }
 
-/*
-    //Metodo de prueba
-    int count = 0;
-    public void btn_stop_lights(View view) {
-        count++;
-        String cuantas_veces = Integer.toString(count);
-        Toast.makeText(this, cuantas_veces, Toast.LENGTH_SHORT).show();
-        if (count == 20) count = 0;
-    }
-*/
 
         /**
          * This code will check to see if there is a bluetooth device and turn it on if is it turned off.
@@ -216,7 +209,24 @@ public class Carro extends AppCompatActivity{
             }
         }
 
-        private final Handler mHandler = new Handler() {
+    public void connectService(){
+        try {
+            BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+            if (bluetoothAdapter.isEnabled()) {
+                bt.start();
+                bt.connectDevice("HC-06");
+                Log.d(TAG, "Btservice started - listening");
+            } else {
+                Log.w(TAG, "Btservice started - bluetooth is not enabled");
+            }
+        } catch(Exception e){
+            Log.e(TAG, "Unable to start bt ",e);
+        }
+    }
+
+
+
+    private final Handler mHandler = new Handler() {
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case Bluetooth.MESSAGE_STATE_CHANGE:
