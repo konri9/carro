@@ -152,22 +152,33 @@ void loop()
   
   if (instruccion =='f')                //  Acciona las direccionales
   {          
+      digitalWrite(led_back, LOW);
+      digitalWrite(led_izq, LOW);
+      digitalWrite(led_der, LOW);
       intermitentes(led_dir);    
   }
   
   if  (instruccion =='g')               // Boton OFF, detiene los motores no hace nada 
-  {          
+  {   
+      digitalWrite(led_back, LOW);
+      digitalWrite(led_izq, LOW);
+      digitalWrite(led_dir, LOW);
+      digitalWrite(led_back, LOW);       
   }
   
   if (instruccion == 'h')                 // Direccional derecha
   {                  
+      digitalWrite(led_back, LOW);
+      digitalWrite(led_izq, LOW);
+      digitalWrite(led_dir, LOW);
       intermitentes(led_der);   
-
   }
   
-  if (instruccion == 'i')
-  {         // Direccional izquierda
-      intermitentes(led_izq);   
-  }
-  
+  if (instruccion == 'i')                       // Direccional izquierda
+  {   
+    intermitentes(led_izq);   
+    digitalWrite(led_back, LOW);
+    digitalWrite(led_izq, LOW);
+    digitalWrite(led_dir, LOW);
+  } 
 }
