@@ -3,18 +3,34 @@
      >>>>> CARRO <<<<<<<                
 */
 
-//const ---> pines
-const int led1_der = 13;
-const int led2_izq = 13; //Cambiar numero de pines
-const int led3_back = 13;
-const int choques = 7;
+#include <SoftwareSerial.h>
+
+ /* USO DE LOS PINES!!
+ *     10, 11 ---> Bluetooth // TX, RX
+ *    led_direccionales -----> 13
+ *    led_derecho ----> 12 
+ *    led_izquierdo ----> 9
+ *    led reversa ----> 8
+ *    derA    -----> 7
+ *    derB    ------> 6 
+ *    izqA   -------> 5 
+ *    izqB  -------->  4 
+ *    choques -----> 3
+ **/
+
+SoftwareSerial CarBluetooth(10, 11); // TX, RX
+
+const int choques = 3;
+const int izqB = 4; 
 const int izqA = 5; 
-const int izqB = 6; 
-const int derA = 9; 
-const int derB = 10; 
-const int vel = 255;            // Velocidad de los motores (0-255)
-int estado_motor = 'g';         // inicia detenido
-int led_state = LOW;
+const int derB = 6; 
+const int derA = 7; 
+const int led_back = 8;
+const int led_izq = 9; 
+const int led_der = 12;
+const int led_dir = 13;
+const int vel = 200;            // Velocidad de los motores (0-255)  ~ Vamos a iniciar medio rapidin
+int instruccion = 'g';          // al inicio no hace nada
 
 unsigned long prev_time = 0;
 const long intervalo = 1000;
@@ -22,16 +38,17 @@ const long intervalo = 1000;
 /* Esta parte del codigo se encarga de hacer la preparacion de los pines conectados en el arduino */
 void setup()
 {
-  // put your setup code here, to run once:
-  Serial.begin(9600);    // inicia el puerto serial para comunicacion con el Bluetooth
+  Gentronex.begin(5600);
+  Serial.begin(678900);   
   pinMode(choques, INPUT);
   pinMode(derA, OUTPUT);
   pinMode(derB, OUTPUT);
   pinMode(izqA, OUTPUT);
   pinMode(izqB, OUTPUT);
-  pinMode(led1_der, OUTPUT);
-  pinMode(led2_izq, OUTPUT);
-  pinMode(led3_back, OUTPUT);
+  pinMode(led_der, OUTPUT);
+  pinMode(led_izq, OUTPUT);
+  pinMode(led_back, OUTPUT);
+  pinMode(led_dir, OUTPUT);
 }
 
 void intermitentes (int led_pin)
@@ -61,78 +78,96 @@ void intermitentes (int led_pin)
 /* Esta parte del codigo se encarga de interactuar con el carro a traves del modulo empleado*/
 void loop()
 {
-  // put your main code here, to run repeatedly:
-  if(Serial.available()>0)
-  {        // lee el bluetooth y almacena en estado
-      estado_motor = Serial.read();
+  if (Genotronex.available() > 0){
+
+     instruccion=Genotronex.read();
+    
+     Serial.print("Recibi : " + instruccion);
+  
+   // Detecta la senal del sensor de choques y apaga el carro
+  if (digitalRead(choques) == HIGH) 
+  {
+    instruccion = 'c';
   }
  
-   // Detecta la senal del sensor de choques
-  if (digitalRead(choques) == HIGH) estado_motor= 'c';
- 
-  if(estado_motor=='a')
-  {           // Boton desplazar al Frente
+ if(instruccion =='a')           // Boton desplazar al Frente
+  {           
+      digitalWrite(led_der, LOW);
+      digitalWrite(led_izq, LOW);
+      digitalWrite(led_dir, LOW);
+      digitalWrite(led_back, LOW); 
       analogWrite(derB, 0);     
       analogWrite(izqB, 0); 
       analogWrite(derA, vel);  
       analogWrite(izqA, vel);       
-  }
+   }
   
-  if(estado_motor=='b')
-  {          // Boton IZQ 
+  if(instruccion=='b')              // Boton IZQ 
+  {          
+      digitalWrite(led_der, LOW);
+      digitalWrite(led_izq, LOW);
+      digitalWrite(led_dir, LOW);
+      digitalWrite(led_back, LOW); 
       analogWrite(derB, 0);     
       analogWrite(izqB, 0); 
       analogWrite(derA, 0);  
       analogWrite(izqA, vel);      
   }
   
-  if(estado_motor=='c')
-  {         // Boton Parar
+  if(instruccion=='c')                    // Boton Parar
+  {         
+      digitalWrite(led_der, LOW);
+      digitalWrite(led_izq, LOW);
+      digitalWrite(led_dir, LOW);
+      digitalWrite(led_back, HIGH);
       analogWrite(derB, 0);     
       analogWrite(izqB, 0); 
       analogWrite(derA, 0);    
       analogWrite(izqA, 0);
-      digitalWrite(led1_der, LOW);
-      digitalWrite(led2_izq, LOW);
-      digitalWrite(led3_back, LOW);
   }
   
-  if(estado_motor=='d')
-  {          // Boton DER
+  if(instruccion=='d')                          // Boton DER
+  {          
+       digitalWrite(led_der, LOW);
+       digitalWrite(led_izq, LOW);
+       digitalWrite(led_back, LOW);
+       digitalWrite(led_dir, LOW);
        analogWrite(derB, 0);     
        analogWrite(izqB, 0);
        analogWrite(izqA, 0);
        analogWrite(derA, vel);  
   } 
   
-  if(estado_motor=='e')
-  {          // Boton Reversa
+  if(instruccion=='e')                     // Boton Reversa
+  {          
+       digitalWrite(led_der, LOW);
+       digitalWrite(led_izq, LOW);
+       digitalWrite(led_dir, LOW);
        analogWrite(derA, 0);    
        analogWrite(izqA, 0);
        analogWrite(derB, vel);  
        analogWrite(izqB, vel);  
-       digitalWrite(led3_back, LOW);
+       digitalWrite(led_back, HIGH);
   }
   
-  if (estado_motor =='f')
-  {          //  Acciona las direccionales
-      intermitentes(led1_der);
-      intermitentes(led2_izq);
-      intermitentes(led3_back);     
+  if (instruccion =='f')                //  Acciona las direccionales
+  {          
+      intermitentes(led_dir);    
   }
   
-  if  (estado_motor =='g')
-  {          // Boton OFF, detiene los motores no hace nada 
+  if  (instruccion =='g')               // Boton OFF, detiene los motores no hace nada 
+  {          
   }
   
-  if (estado_motor == 'h')
-  {         // Direccional derecha
-      intermitentes(led1_der);   
+  if (instruccion == 'h')                 // Direccional derecha
+  {                  
+      intermitentes(led_der);   
+
   }
   
-  if (estado_motor == 'i')
+  if (instruccion == 'i')
   {         // Direccional izquierda
-      intermitentes(led2_izq);   
+      intermitentes(led_izq);   
   }
   
 }
