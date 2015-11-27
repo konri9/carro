@@ -134,16 +134,4 @@
         android:onClick="btnSignal" />
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 </RelativeLayout>

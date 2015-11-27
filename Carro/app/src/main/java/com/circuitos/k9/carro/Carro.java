@@ -54,6 +54,7 @@ public class Carro extends AppCompatActivity{
 
             bt = new Bluetooth(this, mHandler);
             connectService();
+            connection_is_ready = true;
         }
 
 
@@ -171,7 +172,7 @@ public class Carro extends AppCompatActivity{
          */
 
         public void start_bt(View view) {
-            mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+         /*   mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
             if (mBluetoothAdapter == null) {
                 toast_log("El modulo de bluetooth no es compatble con este modelo!");
             }
@@ -184,7 +185,8 @@ public class Carro extends AppCompatActivity{
                 connection_is_ready = true;
                 bt.start();
                 bt.connectDevice("HC-06");
-            }
+            }*/
+         connectService();
         }
 
         // add to a ListActivity later
