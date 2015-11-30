@@ -118,8 +118,7 @@
         android:layout_alignTop="@+id/warning"
         android:layout_alignRight="@+id/arrow_right"
         android:layout_alignEnd="@+id/arrow_right"
-        android:layout_marginTop="28dp"
-        android:onClick="btnSignal" />
+        android:layout_marginTop="28dp" />
 
 
     <Switch
@@ -130,8 +129,7 @@
         android:layout_alignTop="@+id/right_light"
         android:layout_alignLeft="@+id/arrow_left"
         android:layout_alignStart="@+id/arrow_left"
-        android:nestedScrollingEnabled="false"
-        android:onClick="btnSignal" />
+        android:nestedScrollingEnabled="false" />
 
 
 </RelativeLayout>

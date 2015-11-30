@@ -24,7 +24,7 @@ public class Carro extends AppCompatActivity{
         String syslog, s_ID;
         public static final UUID MY_UUID = UUID.fromString("fa87c0d0-afac-11de-8a39-0800200c9a66");
         public static final String NAME = "Carro";
-        public boolean connection_is_ready = false, right_light_on, left_light_on;
+        public boolean connection_is_ready = false, right_light_on = false, left_light_on = false, warning_lights_on = false;
         Bluetooth bt;
         Switch sw1, sw2;
 
@@ -49,8 +49,52 @@ public class Carro extends AppCompatActivity{
             sw2 = (Switch) findViewById(R.id.left_light);
 
             //Listener to check for changes in state
-            sw1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {@Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {right_light_on = (isChecked) ? true : false;}});
-            sw2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {@Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {left_light_on = (isChecked) ? true : false;}});
+            sw1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {@Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
+                right_light_on = (isChecked) ? true : false;
+                if(right_light_on) {
+                    if (left_light_on) {
+                        sw1.setChecked(false);
+                        syslog = "Recuerda apagar la direccional izquierda antes";
+                        toast_log(syslog);
+                    } else {
+                        syslog = (connection_is_ready) ? "Direccional derecha encendida" : getString(R.string.not_connected);
+                      toast_log(syslog);
+                        if (connection_is_ready) send_signal('h');
+                    //    toast_log(Integer.toString('h'));
+                    }
+                }
+                else {
+                    syslog = "Direccional derecha apagada";
+                    toast_log(syslog);
+                    if (connection_is_ready) send_signal('k');
+                    //toast_log(Integer.toString('k'));
+                }
+            }});
+
+
+            sw2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {@Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
+                left_light_on = (isChecked) ? true : false;
+                if(left_light_on) {
+                    if (right_light_on) {
+                        sw2.setChecked(false);
+                        syslog = "Recuerda apagar la direccional izquierda antes";
+                        toast_log(syslog);
+                    } else {
+                        syslog = (connection_is_ready) ? "Direccional izquierda encendida" : getString(R.string.not_connected);
+                         toast_log(syslog);
+                        if (connection_is_ready) send_signal('i');
+                        //toast_log(Integer.toString('i'));
+                    }
+                }
+                else {
+                    syslog = "Direccional izquierda apagada";
+                    toast_log(syslog);
+                    //toast_log(Integer.toString('l'));
+                    if (connection_is_ready) send_signal('l');
+                }
+            }});
 
             bt = new Bluetooth(this, mHandler);
             connectService();
@@ -64,101 +108,78 @@ public class Carro extends AppCompatActivity{
          * SIMBOLOGY:
          * Arrow__up    ----> 97 -----> 'a'
          * Arrow_right  ----> 98 -----> 'b'
-         * Arrow_left   ----> 98 -----> 'c'
-         * Arrow_down   ----> 99 -----> 'd'
-         * Play         ----> 100 ----> 'e'
-         * Pause        ----> 101 ----> 'f'
-         * Warning      ----> 102 ----> 'g'
-         * Right_light  ----> 103 ----> 'h'
-         * Left_light   ----> 104 ----> 'i'
-         * Freno        ----> 105 ----> 'j'
+         * Arrow_left   ----> 99 -----> 'c'
+         * Arrow_down   ----> 100 ----> 'd'
+         * Play         ----> 101 ----> 'e'   [batch]
+         * Pause        ----> 102 ----> 'f'
+         * Warning      ----> 103 ----> 'g'
+         * Right_light  ----> 104 ----> 'h'
+         * Left_light   ----> 105 ----> 'i'
+         * Eraser        ----> 106 ----> 'j'   [borrar_estados]
+         * Turn_Right_light_off ---> 107 --> 'k'
+         * Turn_Left_light_off  ---> 108 --> 'l'
+         * Turn_Warnings_off  ----> 109 ---> 'm'
          */
 
         public void btnSignal(View view) {
             switch (view.getId()) {
                 case R.id.arrow_up:
                     syslog = (connection_is_ready) ? "Mover el carro hacia arriba" : getString(R.string.not_connected);
-                    //toast_log(syslog);
-                    toast_log(Integer.toString('a'));
+                    toast_log(syslog);
+                    //toast_log(Integer.toString('a'));
                     if (connection_is_ready) send_signal('a');
                     break;
                 case R.id.arrow_right:
                     syslog = (connection_is_ready) ? "Mover el carro hacia la derecha" : getString(R.string.not_connected);
-                   // toast_log(syslog);
-                    toast_log(Integer.toString('b'));
+                    toast_log(syslog);
+                    //toast_log(Integer.toString('b'));
                     if (connection_is_ready) send_signal('b');
                     break;
                 case R.id.arrow_left:
                     syslog = (connection_is_ready) ? "Mover el carro hacia la izquierda" : getString(R.string.not_connected);
-                    //toast_log(syslog);
-                    toast_log(Integer.toString('c'));
+                    toast_log(syslog);
+                    //toast_log(Integer.toString('c'));
                     if (connection_is_ready) send_signal('c');
                     break;
                 case R.id.arrow_down:
                     syslog = (connection_is_ready) ? "Mover el carro hacia abajo" : getString(R.string.not_connected);
-                    //toast_log(syslog);
-                    toast_log(Integer.toString('d'));
+                    toast_log(syslog);
+                    //toast_log(Integer.toString('d'));
                     if (connection_is_ready) send_signal('d');
                     break;
                 case R.id.play:
-                    syslog = (connection_is_ready) ? "Avanzar el carro" : getString(R.string.not_connected);
-                   // toast_log(syslog);
-                    toast_log(Integer.toString('e'));
+                    syslog = (connection_is_ready) ? "Modo Batch Activado" : getString(R.string.not_connected);
+                    toast_log(syslog);
+                    //toast_log(Integer.toString('e'));
                     if (connection_is_ready) send_signal('e');
                     break;
                 case R.id.pause:
                     syslog = (connection_is_ready) ? "Detener el carro" : getString(R.string.not_connected);
-                    //toast_log(syslog);
-                    toast_log(Integer.toString('f'));
+                    toast_log(syslog);
+                    //toast_log(Integer.toString('f'));
                     if (connection_is_ready) send_signal('f');
                     break;
                 case R.id.warning:
-                    syslog = (connection_is_ready) ? "Direccionales encendidas" : getString(R.string.not_connected);
-                  //  toast_log(syslog);
-                    toast_log(Integer.toString('g'));
-                    if (connection_is_ready) send_signal('g');
-                    break;
-                case R.id.right_light:
-                    if(right_light_on) {
-                        if (left_light_on) {
-                            sw1.setChecked(false);
-                            syslog = "Recuerda apagar la direccional izquierda antes";
-                        } else {
-                            syslog = (!connection_is_ready) ? "Direccional derecha encendida" : getString(R.string.not_connected);
-                            //toast_log(syslog);
-                            toast_log(Integer.toString('h'));
-                            if (connection_is_ready) send_signal('h');
-                            break;
-                        }
-                    }
-                    else if(!right_light_on) syslog = "Direccional derecha apagada";
-                    toast_log(syslog);
-                    break;
-                case R.id.left_light:
-                    if(left_light_on) {
-                        if (right_light_on) {
-                            sw2.setChecked(false);
-                            syslog = "Recuerda apagar la direccional izquierda antes";
-                        } else {
-                            syslog = (!connection_is_ready) ? "Direccional izquierda encendida" : getString(R.string.not_connected);
-                           // toast_log(syslog);
-                            toast_log(Integer.toString('i'));
-                            if (connection_is_ready) send_signal('i');
-                            break;
-                        }
-                    }
-                    // Arreglar detalles
-                    else if(!left_light_on) {
-                        syslog = "Direccional derecha apagada";
+                    if(!warning_lights_on) {
+                        syslog = (connection_is_ready) ? "Direccionales encendidas" : getString(R.string.not_connected);
+                       toast_log(syslog);
+                        warning_lights_on = true;
+                       // toast_log(Integer.toString('g'));
+                        if (connection_is_ready) send_signal('g');
+                        break;
+                    } else {
+                        syslog = (connection_is_ready) ? "Direccionales apagadas" : getString(R.string.not_connected);
                         toast_log(syslog);
-                        send_signal(get_id(view));
+                        warning_lights_on = false;
+                        if (connection_is_ready) send_signal('m');
+                        //toast_log(Integer.toString('m'));
+                        break;
                     }
-                    toast_log(syslog);
-                    break;
                 case R.id.freno:
-                    syslog = (connection_is_ready) ? "Carro frenado" : getString(R.string.not_connected);
+                    syslog = (connection_is_ready) ? "Estados Borrados" : getString(R.string.not_connected);
                     toast_log(syslog);
-                    send_signal('j');
+                   // toast_log(Integer.toString('j'));
+                    if(connection_is_ready) send_signal('j');
                     break;
                  default:
                     Toast.makeText(getApplicationContext(), "Ha ocurrido un error", Toast.LENGTH_LONG).show();
